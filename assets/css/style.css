@@ -1,17 +1,39 @@
 #body {
-    background-image: url('https://www.wallsauce.com/uploads/wallsauce-com/images/products/web/Lovelljohns/large/classic-map.jpg');
+  background-image: url(../images/map.jpg);
 }
 
 .questions {
-    display: none;
-    visibility: hidden;
+  display: none;
+  visibility: hidden;
 }
 
 .invisible {
-    visibility: collapse;
+  visibility: hidden;
+  display: none;
 }
 
 .visible {
-    display: block;
-    visibility: visible;
+  visibility: visible;
+}
+
+#congrats {
+  position: absolute;
+  padding-top: 20px;
+  src: url(../images/capybara.jpg);
+}
+
+#reset {
+  float: right;
+  margin-left: 10px;
+}
+
+#start {
+  margin-bottom: 10px;
+}
+
+#doneButton {
+    font-size: 19px;
+    background-color: tan;
+    color: #fff;
+    padding: 2px 12px 2px 12px;
 }

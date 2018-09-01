@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $("#congrats").hide();
   // this game object holds all of the questions, possible answers, and then the index of the correct answer for each
   var game = {
     questions: [
@@ -155,6 +156,11 @@ $(document).ready(function() {
         stop();
         $("#messageDiv").html("time up!");
         checkAnswers();
+        if (correct === 10) {
+          $("#form").prepend(
+            '<img id="congrats" src="http://static.victorpest.com/media/articles/images/174/vp_capybara_shutterstock_461068126.jpg" />'
+          );
+        }
       }
     },
 
@@ -176,54 +182,16 @@ $(document).ready(function() {
     }
   };
 
-  // function to tabulate the guesser results
-  function checkAnswers() {
-    // variables needed to hold results
-    resultsHTML = "";
-    var guessedAnswers = [];
-    correct = 0;
-    incorrect = 0;
-    unAnswered = 0;
-
-    // for loop iterates through each question and passes the questions at each index first into
-    // the isCorrect function to see if they match the indices of correct answers, and if they do,
-    // increments up the correct score
-    for (var i = 0; i < game.questions.length; i++) {
-      if (isCorrect(game.questions[i])) {
-        correct++;
-      } else {
-        // then this statement runs the questions at each index through the checkAnswered function
-        // to determine whether the user clicked an answer, or did not click an answer, so that
-        // incorrect and unAnswered scores can be delineated from each other
-        if (checkAnswered(game.questions[i])) {
-          incorrect++;
-        } else {
-          unAnswered++;
-        }
-      }
-    }
-    // display the results of the function in the results div and use strings of text to relate the
-    // results of the for loop with their corresponding values
-    $(".results").html(
-      "correct: " +
-        correct +
-        "<br>" +
-        "incorrect: " +
-        incorrect +
-        "<br>" +
-        "unanswered: " +
-        unAnswered
-    );
-  }
-
   // this function dynamically creates the inputs needed for the form and relates them to the
   // items held within the game object
   function formTemplate(data) {
     // the first variable relates the form field for question with the data in the object for
     // each question so that the questions can be inputed into that form field
-    var qString = "<form id='q1'>" + data.question + "<br><br>";
+    var qString = "<form id='q1'><h4>" + data.question + "</h4><br>";
     // this variable to access the question object's possibles array needed to answer each question
     var possibles = data.possibles;
+    // $(possibles[i]).addClass("choices");
+
     // a for loop to go through the possibles array for each question to add the values of each possibles
     // array and using qString, add them as radio buttons to the question to which they are
     // associated
@@ -237,7 +205,9 @@ $(document).ready(function() {
         "' value=" +
         i +
         ">" +
-        possible;
+        " " +
+        possible +
+        "<br>";
     }
     return qString + "</form><br><br>";
   }
@@ -265,12 +235,12 @@ $(document).ready(function() {
     // call the buildQuestions function
     buildQuestions();
   });
-  // function to build the display of guesser results
-  function resultsTemplate(question) {
-    var htmlBlock = "<div>";
-    htmlBlock = htmlBlock + question.question + ": " + isChecked;
-    return htmlBlock + "</div>";
-  }
+//   // function to build the display of guesser results
+//   function resultsTemplate(question) {
+//     var htmlBlock = "<div>";
+//     htmlBlock = htmlBlock + question.question + ": " + isChecked;
+//     return htmlBlock + "</div>";
+//   }
 
   // function to tabulate the guesser results
   function checkAnswers() {
@@ -301,13 +271,16 @@ $(document).ready(function() {
     // display the results of the function in the results div and use strings of text to relate the
     // results of the for loop with their corresponding values
     $(".results").html(
-      "correct: " +
+        "<h3><strong>" + "Game Over" + "</strong></h3><br>" + 
+      "Congratulations! You answered " +
         correct +
+        " questions correctly." +
         "<br>" +
-        "incorrect: " +
+        "You answered " +
         incorrect +
+        " questions incorrectly." +
         "<br>" +
-        "unanswered: " +
+        "Unanswered: " +
         unAnswered
     );
   }
@@ -332,9 +305,11 @@ $(document).ready(function() {
   // create a function with an onclick event for the doneButton that both checks the Answers
   // and stops the clock when "done" button is pressed
   $("#doneButton").on("click", function() {
+    window.scroll(0, 0)//pushes page to the top
+    $("#congrats").show();
+    $("#congrats").html("<div><h6>And This. is a Capybara</h6></div>");
     checkAnswers();
     stop();
-    $("#messageDiv").html("Game Over!");
     $(".form").addClass("invisible");
   });
 });

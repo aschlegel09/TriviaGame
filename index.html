@@ -16,7 +16,7 @@
 <body id="body">
     <nav></nav>
     <div style="background-color: white; opacity: .75;" class="container">
-        <h1>Geography Trivia Quiz -
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 45px; color: darkolivegreen; text-align: center">Geography Trivia Quiz
             <br>
             <span style="font-size: 14px;">Test your worldly knowledge in a timed test</span>
         </h1>
@@ -25,12 +25,13 @@
     <div class="jumbotron container">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-3 offset-md-3">
+                <div class="col-md-7">
                     <button class="btn btn-danger" id="start">Click to Start</button>
-                    <button class="btn btn-warning" id="reset">RESET GAME</button>
-                    <div id="display">01:00</div>
+                    <button class="btn btn-warning" id="reset" class="reset">RESET GAME</button>
+                    <div id="display" class="alert text-center">Time to Complete - 1:00 minute</div>
                     <div class="results"></div>
                     <div id="messageDiv"></div>
+                    <img id="congrats" src="assets/images/capybara.jpg">
                 </div>
             </div>
             <br>
@@ -66,30 +67,15 @@
                     </form>
                 </div>
                 <br>
-                <div class="row">
-                    Which Countries share a boarder with Switzerland?
-                </div>
-                <div class="row">
-                    <form>
-                        <!-- the name identifier allows only ONE user choice >
-                        <input type="radio" name="country" value="A">A) France, Italy, Germany, Austria
-                        <input type="radio" name="country" value="B">B) France, Italy, Germany, Austria
-                        <input type="radio" name="country" value="C">C) France, Italy, Germany, Austria
-                        <br>
-                        <input type="radio" name="country" value="D">D) France, Italy, Germany, Austria
-                        <input type="radio" name="country" value="E">F) France, Italy, Germany, Austria
-                    </form>
-                </div>
-                <br>
 
             </div-->
+            </div>
+            <div id="doneButton" class="btn btn-default">Submit</div>
         </div>
-        <div id="doneButton" class="btn btn-default">Submit</div>
-    </div>
 
-    <!-- script tags need to be at the END of the body -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+        <!-- script tags need to be at the END of the body -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>
