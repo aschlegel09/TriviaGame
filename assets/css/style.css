@@ -1,3 +1,17 @@
 #body {
     background-image: url('https://www.wallsauce.com/uploads/wallsauce-com/images/products/web/Lovelljohns/large/classic-map.jpg');
 }
+
+.questions {
+    display: none;
+    visibility: hidden;
+}
+
+.invisible {
+    visibility: collapse;
+}
+
+.visible {
+    display: block;
+    visibility: visible;
+}

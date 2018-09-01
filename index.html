@@ -16,7 +16,11 @@
 <body id="body">
     <nav></nav>
     <div style="background-color: white; opacity: .75;" class="container">
-        <h1>Geography Trivia Quiz -<br><span style="font-size: 14px;">Test your worldly knowledge in a timed test</span></h1><hr style="border-color: black">
+        <h1>Geography Trivia Quiz -
+            <br>
+            <span style="font-size: 14px;">Test your worldly knowledge in a timed test</span>
+        </h1>
+        <hr style="border-color: black">
     </div>
     <div class="jumbotron container">
         <div class="col-md-12">
@@ -24,58 +28,63 @@
                 <div class="col-md-3 offset-md-3">
                     <button class="btn btn-danger" id="start">Click to Start</button>
                     <button class="btn btn-warning" id="reset">RESET GAME</button>
-                     <div id="display">00:00</div>
+                    <div id="display">01:00</div>
+                    <div class="results"></div>
+                    <div id="messageDiv"></div>
                 </div>
             </div>
             <br>
             <br>
-            <!-- hide questions until button is pressed -->
-            <div class="row">
-                The distance between the furthest point in America and the furthest point in Russia is only..
-            </div>
-            <div class="row">
-                <form>
-                    <!-- the name identifier allows only ONE user choice -->
-                    <input type="radio" name="miles" value="A">A) 9 miles
-                    <input type="radio" name="miles" value="B">B) 11 miles
-                    <input type="radio" name="miles" value="C">C) 251 miles
-                    <input type="radio" name="miles" value="D">D) 360 miles
-                    <input type="radio" name="miles" value="E">F) 1,000 miles
-                </form>
-            </div>
-            <br>
-            <div class="row">
-                Sofia is the Capital of which country?
-            </div>
+            <div id="questions" class="form">
+                <!-- hide questions until start button is pressed >
+                <div class="row">
+                    The distance between the furthest point in America and the furthest point in Russia is only
+                </div>
+                <div class="row">
+                    <form>
+                        <!-- the name identifier allows only ONE user choice >
+                        <input type="radio" name="miles" value="A">A) 9 miles
+                        <input type="radio" name="miles" value="B">B) 11 miles
+                        <input type="radio" name="miles" value="C">C) 251 miles
+                        <input type="radio" name="miles" value="D">D) 360 miles
+                        <input type="radio" name="miles" value="E">F) 1,000 miles
+                    </form>
+                </div>
+                <br>
+                <div class="row">
+                    Sofia is the Capital of which country?
+                </div>
 
-            <div class="row">
-                <form>
-                    <!-- the name identifier allows only ONE user choice -->
-                    <input type="radio" name="capital" value="A">A) Bulgaria
-                    <input type="radio" name="capital" value="B">B) Estonia
-                    <input type="radio" name="capital" value="C">C) Finland
-                    <input type="radio" name="capital" value="D">D) Czech Republic
-                    <input type="radio" name="capital" value="E">F) Italy
-                </form>
-            </div>
-            <br>
-            <div class="row">
-                Which Countries share a boarder with Switzerland?
-            </div>
-            <div class="row">
-                <form>
-                    <!-- the name identifier allows only ONE user choice -->
-                    <input type="radio" name="country" value="A" checked>A) France, Italy, Germany, Austria
-                    <input type="radio" name="country" value="B">B) France, Italy, Germany, Austria
-                    <input type="radio" name="country" value="C">C) France, Italy, Germany, Austria
-                    <br>
-                    <input type="radio" name="country" value="D">D) France, Italy, Germany, Austria
-                    <input type="radio" name="country" value="E">F) France, Italy, Germany, Austria
-                </form>
-            </div>
-            <br>
+                <div class="row">
+                    <form>
+                        <!-- the name identifier allows only ONE user choice >
+                        <input type="radio" name="capital" value="A">A) Bulgaria
+                        <input type="radio" name="capital" value="B">B) Estonia
+                        <input type="radio" name="capital" value="C">C) Finland
+                        <input type="radio" name="capital" value="D">D) Czech Republic
+                        <input type="radio" name="capital" value="E">F) Italy
+                    </form>
+                </div>
+                <br>
+                <div class="row">
+                    Which Countries share a boarder with Switzerland?
+                </div>
+                <div class="row">
+                    <form>
+                        <!-- the name identifier allows only ONE user choice >
+                        <input type="radio" name="country" value="A">A) France, Italy, Germany, Austria
+                        <input type="radio" name="country" value="B">B) France, Italy, Germany, Austria
+                        <input type="radio" name="country" value="C">C) France, Italy, Germany, Austria
+                        <br>
+                        <input type="radio" name="country" value="D">D) France, Italy, Germany, Austria
+                        <input type="radio" name="country" value="E">F) France, Italy, Germany, Austria
+                    </form>
+                </div>
+                <br>
 
+            </div-->
         </div>
+        <div id="doneButton" class="btn btn-default">Submit</div>
     </div>
 
     <!-- script tags need to be at the END of the body -->
